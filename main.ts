@@ -1,20 +1,21 @@
-input.onGesture(Gesture.LogoUp, function () {
-    Y = Y + 1
-})
-input.onGesture(Gesture.TiltRight, function () {
-    X = X + 1
-})
-input.onGesture(Gesture.TiltLeft, function () {
-    X = X - 1
-})
-input.onGesture(Gesture.LogoDown, function () {
-    Y = Y - 1
-})
-let X = 0
-let Y = 0
-Y = 2
-X = 2
+let accY = 0
+let accX = 0
+let Y = 2
+let X = 2
 basic.forever(function () {
+    accX = input.acceleration(Dimension.X)
+    accY = input.acceleration(Dimension.Y)
+    if (accX < -200) {
+        X = X - 1
+    } else if (accX > 200) {
+        X = X + 1
+    }
+    if (accY < -200) {
+        Y = Y - 1
+    } else if (accY > 200) {
+        Y = Y + 1
+    }
     basic.clearScreen()
     led.plot(X, Y)
+    basic.pause(100)
 })
