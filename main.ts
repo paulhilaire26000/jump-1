@@ -19,15 +19,31 @@ basic.forever(function () {
     led.plot(X, Y)
     basic.pause(100)
     if (X > 4) {
+        basic.clearScreen()
+        basic.showString("perdu")
+        basic.clearScreen()
+        Y = 2
         X = 2
     }
     if (Y > 4) {
+        basic.clearScreen()
+        basic.showString("perdu")
+        basic.clearScreen()
         Y = 2
+        X = 2
     }
     if (X < 0) {
+        basic.clearScreen()
+        basic.showString("perdu")
+        basic.clearScreen()
+        Y = 2
         X = 2
     }
     if (Y < 0) {
+        basic.clearScreen()
+        basic.showString("perdu")
+        basic.clearScreen()
         Y = 2
+        X = 2
     }
 })
