@@ -24,4 +24,10 @@ basic.forever(function () {
     if (Y > 4) {
         Y = 2
     }
+    if (X < 0) {
+        X = 2
+    }
+    if (Y < 0) {
+        Y = 2
+    }
 })
