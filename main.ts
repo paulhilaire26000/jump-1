@@ -18,4 +18,10 @@ basic.forever(function () {
     basic.clearScreen()
     led.plot(X, Y)
     basic.pause(100)
+    if (X > 4) {
+        X = 2
+    }
+    if (Y > 4) {
+        Y = 2
+    }
 })
